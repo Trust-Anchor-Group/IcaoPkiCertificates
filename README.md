@@ -17,3 +17,26 @@ Certificate files are stored in the package folder `Root/IcaoPki`. The
 [`IcaoPkiCertificates.manifest`](IcaoPkiCertificates.manifest) file contains a list of all
 certificates, and can be used to create a distributable package for the TAG Neuron.
 
+### ExtractCertificates
+
+The `ExtractCertificates` utility application can be used to extract certificates from 
+ICAO LDIF files. It takes as input the path to the LDIF file, and outputs the extracted
+certificates in CER format. The application can be run from the command line, and supports 
+the following arguments:
+
+```
+ExtractCertificates -i INPUT_FILE -o OUTPUT_FOLDER
+```
+
+Where:
+
+- `INPUT_FILE` is the path to the LDIF file containing the certificates.
+- `OUTPUT_FOLDER` is the path to the folder where the extracted certificates will be saved.
+
+The [IoTGateway](https://github.com/PeterWaher/IoTGateway) repository contains a utility
+application called [`GenManifest`](https://github.com/PeterWaher/IoTGateway/tree/master/Utilities/Waher.Utility.GenManifest)
+that is used to generate the manifest file for the extracted certificates. The
+[`Install`](https://github.com/PeterWaher/IoTGateway/tree/master/Utilities/Waher.Utility.Install)
+utility is then used to create a distributable package for the TAG Neuron, and the
+[`Sign`](https://github.com/PeterWaher/IoTGateway/tree/master/Utilities/Waher.Utility.Sign)
+utility is used to sign the package for distribution.
