@@ -21,8 +21,9 @@ certificates, and can be used to create a distributable package for the TAG Neur
 
 The `ExtractCertificates` utility application can be used to extract certificates from 
 ICAO LDIF files. It takes as input the path to the LDIF file, and outputs the extracted
-certificates in CER format. The application can be run from the command line, and supports 
-the following arguments:
+certificates in CER format. The LDIF file can encode certificates directly, or include
+signed master files containing sets of certificates. The application can be run from the 
+command line, and supports the following arguments:
 
 ```
 ExtractCertificates -i INPUT_FILE -o OUTPUT_FOLDER[ -d][ -h]
@@ -45,3 +46,10 @@ that is used to generate the manifest file for the extracted certificates. The
 utility is then used to create a distributable package for the TAG Neuron, and the
 [`Sign`](https://github.com/PeterWaher/IoTGateway/tree/master/Utilities/Waher.Utility.Sign)
 utility is used to sign the package for distribution.
+
+### Public ICAO certificates
+
+The [`Root/IcaoPki`](Root/IcaoPki) folder contains the public certificates published by ICAO, 
+ordered by country and SKI. Each certificate is stored in a separate CER file, named according 
+to the country and SKI of the certificate. The certificates are in DER format, and can be used 
+for validation of electronic travel documents that reference them using their AKI.
