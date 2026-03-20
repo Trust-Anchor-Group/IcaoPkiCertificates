@@ -2,7 +2,7 @@
   "profiles": {
     "ExtractCertificates": {
       "commandName": "Project",
-      "commandLineArgs": "-i \"C:\\Temp\\icaopkd-001-complete-009875.ldif\" -o ..\\..\\..\\..\\Root\\IcaoPki -d"
+      "commandLineArgs": "-i \"C:\\Temp\\icaopkd-002-complete-000340.ldif\" -i \"C:\\Temp\\icaopkd-001-complete-009875.ldif\" -o ..\\..\\..\\..\\Root\\IcaoPki -d"
     }
   }
 }
