@@ -25,13 +25,18 @@ certificates in CER format. The application can be run from the command line, an
 the following arguments:
 
 ```
-ExtractCertificates -i INPUT_FILE -o OUTPUT_FOLDER
+ExtractCertificates -i INPUT_FILE -o OUTPUT_FOLDER[ -d][ -h]
 ```
 
 Where:
 
 - `INPUT_FILE` is the path to the LDIF file containing the certificates.
 - `OUTPUT_FOLDER` is the path to the folder where the extracted certificates will be saved.
+
+If `-d` is present, old files no longer present in the LDIF file will be deleted from the 
+output folder.
+
+Use `-h` or `-?` to show the Command-Line help message.
 
 The [IoTGateway](https://github.com/PeterWaher/IoTGateway) repository contains a utility
 application called [`GenManifest`](https://github.com/PeterWaher/IoTGateway/tree/master/Utilities/Waher.Utility.GenManifest)
