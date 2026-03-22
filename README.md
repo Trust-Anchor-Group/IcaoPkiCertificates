@@ -71,3 +71,20 @@ You can then execute the [`UpdateFiles.bat` batch file](UpdateFiles.bat) in the 
 repository, having built the corresponding utilities necessary. The batch file will update the 
 certificate folers, and the corresponding manifest file for the packege. The batch file 
 assumes the downloaded files reside in the parent folder of the solution folder.
+
+### Installing package
+
+The package is available on neurons connected to TAG neurons, with the name
+`IcaoPkiCertificates.package`. You can install it using the installation key:
+
+```
+vAa0l/iFHVogQYUzm+Zs6qPsw+7lYrnyFn4MNAGA7+Gso442gJJMKjknHqka/YjM6gZZSS65HL8Adbfba1067a1a27163b905869469d6f0d
+```
+
+If you use Chat Admin, you can install the package using the command:
+
+```
+install nobackup IcaoPkiCertificates.package vAa0l/iFHVogQYUzm+Zs6qPsw+7lYrnyFn4MNAGA7+Gso442gJJMKjknHqka/YjM6gZZSS65HL8Adbfba1067a1a27163b905869469d6f0d
+```
+
+The package is a content-only package, so the command does not require a restart of the Neuron.
