@@ -34,6 +34,9 @@ Where:
 - `INPUT_FILE` is the path to the LDIF file containing the certificates.
 - `OUTPUT_FOLDER` is the path to the folder where the extracted certificates will be saved.
 
+You can process multiple input files by providing multiple -i arguments, but only 
+one output folder with -o.
+
 If `-d` is present, old files no longer present in the LDIF file will be deleted from the 
 output folder.
 
@@ -53,3 +56,18 @@ The [`Root/IcaoPki`](Root/IcaoPki) folder contains the public certificates publi
 ordered by country and SKI. Each certificate is stored in a separate CER file, named according 
 to the country and SKI of the certificate. The certificates are in DER format, and can be used 
 for validation of electronic travel documents that reference them using their AKI.
+
+### Updating list of certificates
+
+ICAO regularly updates the list of public certificates, and new certificates may be added or 
+old certificates may be removed. To update the list of certificates, you first need to
+[downloadt hem from ICAO](https://pkddownloadsg.icao.int/). To get a complete list, you need
+to download the following two files:
+
+* `icaopkd-001-complete-009875.ldif`, containg eMRTD Certificates (DSC, BCSC, BCSC-NC) and CRL.
+* `icaopkd-002-complete-000340.ldif`, containing the CSCA MasterList.
+
+You can then execute the [`UpdateFiles.bat` batch file](UpdateFiles.bat) in the root of this 
+repository, having built the corresponding utilities necessary. The batch file will update the 
+certificate folers, and the corresponding manifest file for the packege. The batch file 
+assumes the downloaded files reside in the parent folder of the solution folder.
