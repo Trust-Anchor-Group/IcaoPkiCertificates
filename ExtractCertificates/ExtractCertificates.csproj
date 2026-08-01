@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.9" />
-    <PackageReference Include="Waher.Runtime.Collections" Version="1.0.3" />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.10" />
+    <PackageReference Include="Waher.Runtime.Collections" Version="1.0.4" />
   </ItemGroup>
 
 </Project>
