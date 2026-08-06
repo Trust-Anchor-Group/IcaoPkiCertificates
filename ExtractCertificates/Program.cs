@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Formats.Asn1;
+using System.Numerics;
 using System.Security.Cryptography.Pkcs;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -101,6 +102,7 @@ internal class Program
 				throw new Exception("Output folder not specified.");
 
 			SortedDictionary<string, int> CountsPerCountry = [];
+			SortedDictionary<string, int> CountsPerObjectClass = [];
 			StringBuilder sb = new();
 			Status Status = new();
 
@@ -120,7 +122,7 @@ internal class Program
 				using FileStream f = File.OpenRead(InputFileName);
 				using StreamReader r = new(f);
 
-				string s;
+				string s, s2;
 				int State = 0;
 
 				while (!r.EndOfStream)
@@ -131,8 +133,16 @@ internal class Program
 					bool Empty = string.IsNullOrEmpty(s);
 					if (Empty)
 						Status.NrRecords++;
+					else if (s.StartsWith("objectclass:"))
+					{
+						s2 = s[12..].Trim();
+						if (CountsPerObjectClass.TryGetValue(s2, out int ObjectClassCount))
+							CountsPerObjectClass[s2] = ObjectClassCount + 1;
+						else
+							CountsPerObjectClass[s2] = ObjectClassCount;
+					}
 
-					switch(State)
+					switch (State)
 					{
 						case 0: // Searching for certificate or master list.
 							if (Empty)
@@ -235,7 +245,16 @@ internal class Program
 				Console.Out.WriteLine("Nr old files not deleted: " + NrNotDeleted.ToString());
 			}
 
+			Console.Out.WriteLine();
+			Console.Out.WriteLine("Per Country: ");
+
 			foreach (KeyValuePair<string, int> P in CountsPerCountry)
+				Console.Out.WriteLine(P.Key + ": " + P.Value.ToString());
+		
+			Console.Out.WriteLine();
+			Console.Out.WriteLine("Object Classes: ");
+
+			foreach (KeyValuePair<string, int> P in CountsPerObjectClass)
 				Console.Out.WriteLine(P.Key + ": " + P.Value.ToString());
 		}
 		catch (Exception ex)
