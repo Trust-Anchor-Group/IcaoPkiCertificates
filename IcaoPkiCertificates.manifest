@@ -465,6 +465,70 @@
 				<Content fileName="csca-cy_11_2018_self_signed.cer" />
 			</Folder>
 		</Folder>
+		<Folder name="DE">
+			<Content fileName="DE_CRL.crl" />
+			<Content fileName="Download.url" />
+			<Folder name="20201022_CA_ME_046f">
+				<Content fileName="20201022_[CA]_ME_046f.cer" />
+			</Folder>
+			<Folder name="20211011_CA_ME_0481">
+				<Content fileName="20211011_[CA]_ME_0481.cer" />
+			</Folder>
+			<Folder name="Ankunftsnachweis_ab04092023_cer">
+				<Content fileName="20230904_[CA]_ME_04b3.cer" />
+			</Folder>
+			<Folder name="Ankunftsnachweis_ab0602022_cer">
+				<Content fileName="202200906_[CA]_ME_04a0.cer" />
+			</Folder>
+			<Folder name="Ankunftsnachweis_ab17122018_cer">
+				<Content fileName="20181217_[CA]_ME_0420.cer" />
+			</Folder>
+			<Folder name="csca-germany_001_self_signed_cer">
+				<Content fileName="csca-germany_001_self_signed_cer.cer" />
+			</Folder>
+			<Folder name="csca-germany_013_link_cer">
+				<Content fileName="csca-germany_013_link_cer.cer" />
+			</Folder>
+			<Folder name="csca-germany_013_self_signed_cer">
+				<Content fileName="csca-germany_013_self_signed_cer.cer" />
+			</Folder>
+			<Folder name="csca-germany_10-2024_link">
+				<Content fileName="LINK_[CA]_csca-germany-csca07.cer" />
+			</Folder>
+			<Folder name="csca-germany_10-2024_self_signed">
+				<Content fileName="[ROOT-CA]_CSCA07.cer" />
+			</Folder>
+			<Folder name="csca-germany_100_link_cer">
+				<Content fileName="csca-germany_100_link.cer" />
+			</Folder>
+			<Folder name="csca-germany_100_self_signed_cer">
+				<Content fileName="csca-germany_100_self_signed.cer" />
+			</Folder>
+			<Folder name="csca-germany_101_link_cer">
+				<Content fileName="csca-germany-101-link.cer" />
+			</Folder>
+			<Folder name="csca-germany_101_self_signed_cer">
+				<Content fileName="csca-germany-101-self-signed.cer" />
+			</Folder>
+			<Folder name="csca-germany_103_link">
+				<Content fileName="csca-germany_103_link.cer" />
+			</Folder>
+			<Folder name="csca-germany_103_self_signed">
+				<Content fileName="csca-germany_103_self_signed.cer" />
+			</Folder>
+			<Folder name="csca-germany_104_link">
+				<Content fileName="Link-CSCA-Germany.cer" />
+			</Folder>
+			<Folder name="csca-germany_104_self_signed">
+				<Content fileName="CSCA-Germany_self_signed.cer" />
+			</Folder>
+			<Folder name="csca-germany_11-2021_link">
+				<Content fileName="Link_[CA]_csca-germany_CSCA06.cer" />
+			</Folder>
+			<Folder name="csca-germany_11-2021_self_signed">
+				<Content fileName="[ROOT-CA]_CSCA06.cer" />
+			</Folder>
+		</Folder>
 		<Folder name="DK">
 			<Content fileName="CSCA-2006.pem" />
 			<Content fileName="CSCA-2009.pem" />
@@ -15437,6 +15501,7 @@
 				<Content fileName="0230D4F5E312E6C7F460601F790B1A44E35B09F2.cer" />
 				<Content fileName="02C15E22252F4B9100F51CB230D0F2DDE03F412C.cer" />
 				<Content fileName="0B99F390D6259865A507D15DE57868016385C35F.cer" />
+				<Content fileName="1BC750B147A755FA2F2579206E55D22FE2E4279E.cer" />
 				<Content fileName="2C9C98E4BB51B3E6FCE838752B1AA33F0DFDD286.cer" />
 				<Content fileName="33DA8144B4DA7FCCA41D501140107AE04F747F43.cer" />
 				<Content fileName="35A00F27922C4C4E429C41F27DABC8A1E0EF34B8.cer" />
@@ -15448,20 +15513,27 @@
 				<Content fileName="508C6C7DF78F2131B4AE7865815DF8EB16426EC8.cer" />
 				<Content fileName="56D505754EBE0994D5E0552BD193AA4C057DD545.cer" />
 				<Content fileName="5AB302E01CE21BCEFB9E163565943547110C1730.cer" />
+				<Content fileName="6044F245F2E071D4D564F4E577D63669DBEB1859.cer" />
 				<Content fileName="68A2E90E8D9794A05764161DA5CEA364413C4B43.cer" />
 				<Content fileName="6C37A4DA4F584A6DD3E1B416CE1DB5EEC390A653.cer" />
 				<Content fileName="6DDADD564AD65BBEA8B3B64BA3CC5E793AC29CF5.cer" />
+				<Content fileName="6E7EBE8598E78FA1B061A61274A84F9ED22EDFC7.cer" />
+				<Content fileName="741A44AD4BD7B6FCD5BAEEF11E827E58A5981C24.cer" />
 				<Content fileName="83C3096F8C3AAA4EF5BB9989D34B37588BCDEF9B.cer" />
 				<Content fileName="88C82E28D19EE059F8FBB172A31314BB5F67E7AD.cer" />
 				<Content fileName="8B87F1BF782480742FB64CC6EEF03D7F0AEBD272.cer" />
 				<Content fileName="A0B98CC5657548E150216834188E01B6D955C6F0.cer" />
+				<Content fileName="A40A5FC380AE3E59AF1B32D6136AEFEEC8CA35E8.cer" />
 				<Content fileName="A6B1C0A99B8220A6B153BC0CF5B38A7131AF314D.cer" />
 				<Content fileName="B6377BB8D65E13DAB4578DA756243B64B6DD1972.cer" />
 				<Content fileName="BF8208316E3B14168D5AD6C089A62ECDD94BDFA5.cer" />
+				<Content fileName="C17BA915F75CDDD26B3D609A2354DE12EE3F0EC6.cer" />
 				<Content fileName="C605720129DBF63874CF88BA37C48DEFF73ECA54.cer" />
 				<Content fileName="CDA85F51F0CD0ABD5B9EB7D313C16F0642C92BA4.cer" />
 				<Content fileName="D5DC38C60C27ECB847F15AD3BE58276FB6A463C7.cer" />
 				<Content fileName="E289AE0EA5965F5B19043BCA8AE268F8D2430A67.cer" />
+				<Content fileName="E376AE6612FE7A81E6722C51385BD883490FC3A2.cer" />
+				<Content fileName="E8A62993EAE208AA203E49D7649BBAE1BA3560CB.cer" />
 				<Content fileName="EE086EE4EE1D066DC151CB61B02DB0A7C50881D3.cer" />
 				<Content fileName="EEFC5DA0CD9EA274C6B8ADE15DB83EF6209D8E12.cer" />
 				<Content fileName="F21EFF3A2485E9ABA282EC394FDD91FF6BBDA696.cer" />
