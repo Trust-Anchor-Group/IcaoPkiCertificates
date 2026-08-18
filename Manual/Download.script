@@ -15,7 +15,22 @@ DownloadFiles(PageUrl,DownloadFolder):=
 
 	preview(printline("Downloading: "+PageUrl));
 	PageUrl:=Create(System.Uri,PageUrl);
-	Page:=GET(PageUrl,{Accept:"text/html"});
+
+	Page:=GET(PageUrl,{
+		"Accept": "text/html,application/xhtml+xml",
+		"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+		"Accept-Language": "en-US,en;q=0.5",
+		"Cache-Control": "no-cache",
+		"Sec-Ch-Ua": "\"Chromium\";v=\"146\", \"Not-A.Brand\";v=\"24\", \"Microsoft Edge\";v=\"146\"",
+		"Sec-Ch-Ua-Mobile": "?0",
+		"Sec-Ch-Ua-Platform": "\"Windows\"",
+		"Sec-Fetch-Dest": "document",
+		"Sec-Fetch-Mode": "navigate",
+		"Sec-Fetch-Site": "none",
+		"Sec-Fetch-User": "?1",
+		"Upgrade-Insecure-Requests": "1"
+	});
+
 	preview(printline("Downloaded."));
 
 	sb:=Create(System.Text.StringBuilder);
@@ -35,7 +50,22 @@ DownloadFiles(PageUrl,DownloadFolder):=
 			try
 			(
 				preview(printline("Downloading: "+Str(LinkUri)));
-				Content:=Get(LinkUri);
+
+				Content:=Get(LinkUri,{
+					"Accept": "*/*",
+					"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+					"Accept-Language": "en-US,en;q=0.5",
+					"Cache-Control": "no-cache",
+					"Sec-Ch-Ua": "\"Chromium\";v=\"146\", \"Not-A.Brand\";v=\"24\", \"Microsoft Edge\";v=\"146\"",
+					"Sec-Ch-Ua-Mobile": "?0",
+					"Sec-Ch-Ua-Platform": "\"Windows\"",
+					"Sec-Fetch-Dest": "document",
+					"Sec-Fetch-Mode": "navigate",
+					"Sec-Fetch-Site": "none",
+					"Sec-Fetch-User": "?1",
+					"Upgrade-Insecure-Requests": "1"
+				});
+
 				FileName:=UrlDecode(System.IO.Path.GetFileName(Link));
 				FileName:=System.IO.Path.Combine(DownloadFolder,FileName);
 
@@ -101,8 +131,8 @@ DownloadFiles("https://www.mvr.bg/en/ministry/about-ministry-of-internals/useful
 DownloadFiles("https://pki.politsei.ee/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\EE");
 DownloadFiles("https://www.skra.is/english/people/passport-and-id-card/passport/various-information-on-passports/security-of-icelandic-passports/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\IS");
 DownloadFiles("https://csca-ita.interno.gov.it/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\IT");
+DownloadFiles("https://www.mofa.go.jp/ca/pss/page23e_000598.html","C:\\My Projects\\IcaoPkiCertificates\\Manual\\JP");
 
-DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
 DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
 DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
 DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");

@@ -662,6 +662,15 @@
 				<Content fileName="IT_CSCAMasterList.ml" />
 			</Folder>
 		</Folder>
+		<Folder name="JP">
+			<Content fileName="100686432.cer" />
+			<Content fileName="100686451.cer" />
+			<Content fileName="100686452.cer" />
+			<Content fileName="100686453.cer" />
+			<Content fileName="100686454.cer" />
+			<Content fileName="Download.url" />
+			<Content fileName="JPN.crl" />
+		</Folder>
 	</Folder>
 	<Folder name="Root">
 		<Folder name="IcaoPki">
