@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Formats.Asn1;
-using System.Numerics;
 using System.Security.Cryptography.Pkcs;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using Waher.Events;
 using Waher.Runtime.Collections;
 
 internal class Program
@@ -13,10 +13,11 @@ internal class Program
 	/// in an output folder, ordered by country and Subject Key Identifier.
 	/// 
 	/// Syntax:
-	/// ExtractCertificates -i INPUT_FILE -o OUTPUT_FOLDER[ -d][ -h]
+	/// ExtractCertificates (-i INPUT_FILE | -f INPUT_FOLDER)* -o OUTPUT_FOLDER[ -d][ -h]
 	/// 
 	/// Where:
 	/// INPUT_FILE     is the file name of the LDIF file containing the certificates.
+	/// INPUT_FOLDER   is the folder containing certificate files.
 	/// OUTPUT_FOLDER  is the folder where the extracted certificates will be saved.
 	/// 
 	/// You can process multiple input files by providing multiple -i arguments, but only 
@@ -33,6 +34,7 @@ internal class Program
 		try
 		{
 			ChunkedList<string> InputFileNames = [];
+			ChunkedList<string> InputFolderNames = [];
 			string? OutputFolder = null;
 			int i = 0;
 			int c = Arguments.Length;
@@ -48,6 +50,13 @@ internal class Program
 							throw new Exception("Expected file name.");
 
 						InputFileNames.Add(Arguments[i++]);
+						break;
+
+					case "-f":
+						if (i >= c)
+							throw new Exception("Expected folder name.");
+
+						InputFolderNames.Add(Arguments[i++]);
 						break;
 
 					case "-o":
@@ -112,6 +121,57 @@ internal class Program
 
 			foreach (string FileName in Directory.GetFiles(OutputFolder, "*.cer", SearchOption.AllDirectories))
 				Status.ExistingFiles[FileName] = true;
+
+			foreach (string FolderName in InputFolderNames)
+			{
+				string[] Files = 
+					Directory.GetFiles(FolderName, "*.cer", SearchOption.AllDirectories).Join(
+					Directory.GetFiles(FolderName, "*.crt", SearchOption.AllDirectories));
+
+				foreach (string FileName in Files)
+				{
+					try
+					{
+						byte[] Bin = File.ReadAllBytes(FileName);
+						X509Certificate2 Certificate = new(Bin);
+						CheckCertificate(Certificate, Bin, Status, OutputFolder);
+					}
+					catch (Exception)
+					{
+						Status.NrErrors++;
+					}
+				}
+
+				Files = Directory.GetFiles(FolderName, "*.pem", SearchOption.AllDirectories);
+
+				foreach (string FileName in Files)
+				{
+					try
+					{
+						string s = File.ReadAllText(FileName);
+						i = s.IndexOf("-----BEGIN CERTIFICATE-----");
+						if (i >= 0)
+						{
+							s = s[27..].TrimStart();
+							i = s.IndexOf("-----END CERTIFICATE-----");
+
+							if (i > 0)
+							{
+								s = s[..i].TrimEnd();
+
+								byte[] Bin = Convert.FromBase64String(s);
+								X509Certificate2 Certificate = new(Bin);
+								CheckCertificate(Certificate, Bin, Status, OutputFolder);
+							}
+						}
+
+					}
+					catch (Exception)
+					{
+						Status.NrErrors++;
+					}
+				}
+			}
 
 			foreach (string FileName in InputFileNames)
 			{

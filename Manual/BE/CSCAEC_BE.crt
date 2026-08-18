@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/diplomatie.be/templates/pagenotfound.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Diplomatie.be</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<link href="http://www.diplomatie.be/style/lang.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div class="container">
+		<ul class="languages">
+        	<li lang="nl" xml:lang="nl">
+            <!-- InstanceBeginEditable name="body_nl" -->
+				<h1>Federale Overheidsdienst Buitenlandse Zaken, Buitenlandse Handel en Ontwikkelingssamenwerking</h1>
+				<p>De pagina die u zoekt kan niet worden gevonden.<br />
+                Gelieve hier te klikken om <a href="http://diplomatie.belgium.be">naar de homepage</a> te gaan.</p>
+				<!-- InstanceEndEditable -->
+			</li>
+			<li lang="fr" xml:lang="fr">
+				<!-- InstanceBeginEditable name="body_fr" -->
+				<h1>Service public f&eacute;d&eacute;ral Affaires &eacute;trang&egrave;res, Commerce ext&eacute;rieur et Coop&eacute;ration au D&eacute;veloppement</h1>
+				<p>La page que vous cherchez ne se retrouve pas sur le serveur.<br />
+                Veuillez cliquez ici pour aller <a href="http://diplomatie.belgium.be">&agrave; la page d'accueil</a>.</p>
+				<!-- InstanceEndEditable -->
+			</li>
+            <li lang="de" xml:lang="de">
+            <!-- InstanceBeginEditable name="body_de" -->
+				<h1>Föderaler Öffentlicher Dienst Auswärtige Angelegenheiten, Außenhandel und Entwicklungszusammenarbeit</h1>
+				<p>Die gewünschte Seite wurde nicht gefunden. Bitte surfen Sie <a href="http://diplomatie.belgium.be">zur Startseite</a> weiter.</p>
+				<!-- InstanceEndEditable -->
+			</li>
+            <li lang="en" xml:lang="en">
+            <!-- InstanceBeginEditable name="body_en" -->
+				<h1>Federal Public Service Foreign Affairs, Foreign Trade and Development Cooperation</h1>
+				<p>The page you are looking for cannot be found.<br /> 
+        		Please click here to go <a href="http://diplomatie.belgium.be">to the Homepage</a>.</p>
+				<!-- InstanceEndEditable -->
+			</li>
+		</ul>
+</div>
+</body>
+<!-- InstanceEnd --></html>

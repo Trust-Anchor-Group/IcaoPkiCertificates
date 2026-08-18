@@ -2,7 +2,7 @@
   "profiles": {
     "ExtractCertificates": {
       "commandName": "Project",
-      "commandLineArgs": "-i ..\\..\\..\\..\\..\\icaopkd-002-complete-527.ldif -i ..\\..\\..\\..\\..\\icaopkd-001-complete-10283.ldif -i ..\\..\\..\\..\\..\\icaopkd-003-complete-10.ldif -i ..\\..\\..\\..\\..\\icaopkd-004-complete-10.ldif -i ..\\..\\..\\..\\..\\icaopkd-005-complete-11.ldif -o ..\\..\\..\\..\\Root\\IcaoPki -d"
+      "commandLineArgs": "-i ..\\..\\..\\..\\..\\icaopkd-002-complete-527.ldif -i ..\\..\\..\\..\\..\\icaopkd-001-complete-10283.ldif -i ..\\..\\..\\..\\..\\icaopkd-003-complete-10.ldif -i ..\\..\\..\\..\\..\\icaopkd-004-complete-10.ldif -i ..\\..\\..\\..\\..\\icaopkd-005-complete-11.ldif -f ..\\..\\..\\..\\Manual -o ..\\..\\..\\..\\Root\\IcaoPki -d"
     }
   }
 }
