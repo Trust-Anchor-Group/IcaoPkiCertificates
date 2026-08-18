@@ -31,13 +31,21 @@ DownloadFiles(PageUrl,DownloadFolder):=
 			(
 				preview(printline("Downloading: "+Str(LinkUri)));
 				Content:=Get(LinkUri);
+				FileName:=System.IO.Path.GetFileName(Link);
+				FileName:=System.IO.Path.Combine(DownloadFolder,FileName);
+
 				if Content is Binary then
 				(
-					FileName:=System.IO.Path.GetFileName(Link);
-					FileName:=System.IO.Path.Combine(DownloadFolder,FileName);
 					SaveFile(Content,FileName);
 					Stat.NrFilesDownloaded++;
 				)
+				else if Content is Waher.Content.Binary.CustomEncoding then
+				(
+					SaveFile(Content.Encoded,FileName);
+					Stat.NrFilesDownloaded++;
+				)
+				else
+					preview(printline("Type: "+Str(Content.GetType())));
 			)
 			catch
 			(
@@ -45,7 +53,8 @@ DownloadFiles(PageUrl,DownloadFolder):=
 				Stat.NrErrors++;
 			)
 		)
-	)
+	);
+	preview(printline("Links processed."));
 );
 
 PrintStat():=

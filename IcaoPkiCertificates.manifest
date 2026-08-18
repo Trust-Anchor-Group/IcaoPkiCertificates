@@ -414,6 +414,11 @@
 			<Content fileName="tsa2014.crt" />
 			<Content fileName="tsa2015.crt" />
 		</Folder>
+		<Folder name="BG">
+			<Content fileName="BGCRL.crl" />
+			<Content fileName="CSCA001.crt" />
+			<Content fileName="LinkCert004_EC001.cer" />
+		</Folder>
 		<Folder name="CL">
 			<Content fileName="MINUTA - ENTREGA DE LLAVES O CLAVE.pdf" />
 			<Folder name="CSCA1">
@@ -2109,6 +2114,7 @@
 				<Content fileName="3BF335A9161BACD51D0F31918F37D249408206FA.cer" />
 				<Content fileName="3CCD2A8E0D3DCC3D93D6F8C694744693A0CBC285.cer" />
 				<Content fileName="3D27261A21E1F7C38C90EA7875AAAD02AB805185.cer" />
+				<Content fileName="3E698631688F140A8004948FFB32789FB6849360.cer" />
 				<Content fileName="3F2F5F547E4886EA0E8DBACD297ECC7C47B9CB9B.cer" />
 				<Content fileName="41D71963740247D0FAFE27B64C441E0142AE91F0.cer" />
 				<Content fileName="41F1BFEB4DBC2CE4613050D594800AC04C718187.cer" />
