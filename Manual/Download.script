@@ -36,7 +36,7 @@ DownloadFiles(PageUrl,DownloadFolder):=
 			(
 				preview(printline("Downloading: "+Str(LinkUri)));
 				Content:=Get(LinkUri);
-				FileName:=System.IO.Path.GetFileName(Link);
+				FileName:=UrlDecode(System.IO.Path.GetFileName(Link));
 				FileName:=System.IO.Path.Combine(DownloadFolder,FileName);
 
 				if Content is Binary then
@@ -52,6 +52,11 @@ DownloadFiles(PageUrl,DownloadFolder):=
 				else if Content is Waher.Content.Zip.ZipFile then
 				(
 					SaveFile(Content.Binary,FileName);
+					Stat.NrFilesDownloaded++;
+				)
+				else if Content is Waher.IoTGateway.Encoding.BinaryPdfDocument then
+				(
+					SaveFile(Content.Document,FileName);
 					Stat.NrFilesDownloaded++;
 				)
 				else
@@ -94,6 +99,7 @@ DownloadFiles("https://www.bmi.gv.at/downloads/csca.html","C:\\My Projects\\Icao
 DownloadFiles("https://certs.eid.belgium.be/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\BE");	// NOTE: Certificates available in PDF files also. These are not downloaded
 DownloadFiles("https://www.mvr.bg/en/ministry/about-ministry-of-internals/usefull-for-you/certificates-for-verification-of-e-documents","C:\\My Projects\\IcaoPkiCertificates\\Manual\\BG");
 DownloadFiles("https://pki.politsei.ee/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\EE");
+DownloadFiles("https://www.skra.is/english/people/passport-and-id-card/passport/various-information-on-passports/security-of-icelandic-passports/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\IS");
 
 
 
