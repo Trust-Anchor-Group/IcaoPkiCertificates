@@ -476,6 +476,26 @@
 			<Content fileName="CSCA-2023-link.pem" />
 			<Content fileName="CSCA-2023.pem" />
 		</Folder>
+		<Folder name="EE">
+			<Content fileName="csca_Estonia_2007-2009-link.cer" />
+			<Content fileName="csca_Estonia_2007.cer" />
+			<Content fileName="csca_Estonia_2009-2012-link.cer" />
+			<Content fileName="csca_Estonia_2009.crt" />
+			<Content fileName="csca_Estonia_2012-2015-link.crt" />
+			<Content fileName="csca_Estonia_2012.cer" />
+			<Content fileName="csca_Estonia_2015-2016-link.crt" />
+			<Content fileName="csca_Estonia_2015.cer" />
+			<Content fileName="csca_Estonia_2016-2019-link.crt" />
+			<Content fileName="csca_Estonia_2016.cer" />
+			<Content fileName="csca_Estonia_2019-2020-link.crt" />
+			<Content fileName="csca_Estonia_2019.cer" />
+			<Content fileName="csca_Estonia_2020-2023-link.crt" />
+			<Content fileName="csca_Estonia_2020.crt" />
+			<Content fileName="csca_Estonia_2023.crt" />
+			<Content fileName="CSCA_masterlist.ml" />
+			<Content fileName="csca.crl" />
+			<Content fileName="spoc.crl" />
+		</Folder>
 	</Folder>
 	<Folder name="Root">
 		<Folder name="IcaoPki">
@@ -15438,6 +15458,16 @@
 				<Content fileName="5EC388AD3CCB913E8A3BC461034CA558BA9F2917.cer" />
 				<Content fileName="A910505B0820E86217A4BB583F23A9F064B9EDBD.cer" />
 				<Content fileName="E89DA7EC272D9E5D6556455BD57F58E88A53E732.cer" />
+			</Folder>
+			<Folder name="EE">
+				<Content fileName="55ABD26F857EEE40E0614ADF983E2BB6936C55BC.cer" />
+				<Content fileName="5E789A65B3E10C2076EAFFAD40B16694E3552588.cer" />
+				<Content fileName="8ED5F767678D9B0E5231F30A2238D17A6F0FE3AF.cer" />
+				<Content fileName="A97A0FC4047C7561BCB7E59935FE7AAC7EEBAB22.cer" />
+				<Content fileName="C30F8F7B176FA6E9E59B2D911E327BD072F648F0.cer" />
+				<Content fileName="ECC74BADEC352B72F40C2ABFC4F8F232CEC26F61.cer" />
+				<Content fileName="EEA07E9416C31F3F805D4AEA2DEA7C2A946D92C3.cer" />
+				<Content fileName="F2D54B92C91EEA929DF8986E158C031B56D6367A.cer" />
 			</Folder>
 			<Folder name="ES">
 				<Content fileName="00D38CAF4B70CA8DF86CFACFFE8D2D83E3602F51.cer" />

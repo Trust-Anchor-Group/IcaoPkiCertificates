@@ -20,8 +20,10 @@ DownloadFiles(PageUrl,DownloadFolder):=
 	Page.Export(w);
 	w.Flush();
 	x:=Xml(sb.ToString());
-	Links:=[foreach Node in x.SelectNodes("//A/@href") do Node.Value];
-	preview(printline(Str(count(Links))+" links in document."));
+	hs:=Create(System.Collections.Generic.HashSet,System.String);
+	foreach Node in x.SelectNodes("//A/@href") do hs.Add(Node.Value);
+	Links:=[foreach Link in hs : Link];
+	preview(printline(Str(count(Links))+" unique links in document."));
 	
 	foreach Link in Links do
 	(
@@ -79,5 +81,6 @@ ZeroStat():=
 DownloadFiles("https://www.bmi.gv.at/downloads/csca.html","C:\\My Projects\\IcaoPkiCertificates\\Manual\\AT");
 DownloadFiles("https://certs.eid.belgium.be/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\BE");	// NOTE: Certificates available in PDF files also. These are not downloaded
 DownloadFiles("https://www.mvr.bg/en/ministry/about-ministry-of-internals/usefull-for-you/certificates-for-verification-of-e-documents","C:\\My Projects\\IcaoPkiCertificates\\Manual\\BG");
+DownloadFiles("https://pki.politsei.ee/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\EE");
 
 PrintStat();
