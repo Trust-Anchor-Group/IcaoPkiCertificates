@@ -100,6 +100,19 @@ DownloadFiles("https://certs.eid.belgium.be/","C:\\My Projects\\IcaoPkiCertifica
 DownloadFiles("https://www.mvr.bg/en/ministry/about-ministry-of-internals/usefull-for-you/certificates-for-verification-of-e-documents","C:\\My Projects\\IcaoPkiCertificates\\Manual\\BG");
 DownloadFiles("https://pki.politsei.ee/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\EE");
 DownloadFiles("https://www.skra.is/english/people/passport-and-id-card/passport/various-information-on-passports/security-of-icelandic-passports/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\IS");
+DownloadFiles("https://csca-ita.interno.gov.it/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\IT");
+
+DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
+DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
+DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
+DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
+DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
+DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
+DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
+DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
+DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
+DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
+DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
 
 
 

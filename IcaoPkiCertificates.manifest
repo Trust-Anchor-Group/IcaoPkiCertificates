@@ -639,6 +639,29 @@
 				</Folder>
 			</Folder>
 		</Folder>
+		<Folder name="IT">
+			<Content fileName="CIE3.0-NotaAnomaliaDG12ITA.pdf" />
+			<Content fileName="CRL_CSCA.crl" />
+			<Content fileName="CSCA00.cer" />
+			<Content fileName="CSCA01.cer" />
+			<Content fileName="CSCA02.cer" />
+			<Content fileName="CSCA03.cer" />
+			<Content fileName="CSCA04.cer" />
+			<Content fileName="CSCA05.cer" />
+			<Content fileName="Download.url" />
+			<Content fileName="ItalianIdentityCardListof346.275cardswithwrongDG12-signed.pdf" />
+			<Content fileName="LinkCertificate_CSCA00_CSCA01.cer" />
+			<Content fileName="LinkCertificate_CSCA01_CSCA02.cer" />
+			<Content fileName="LinkCertificate_CSCA02_CSCA03.cer" />
+			<Content fileName="LinkCertificate_CSCA03_CSCA04.cer" />
+			<Content fileName="LinkCertificate_CSCA04_CSCA05.cer" />
+			<Folder name="IT_CIE_DeviationList">
+				<Content fileName="TDDL-CIE-Signed-20180530.der" />
+			</Folder>
+			<Folder name="IT_MasterListCSCA">
+				<Content fileName="IT_CSCAMasterList.ml" />
+			</Folder>
+		</Folder>
 	</Folder>
 	<Folder name="Root">
 		<Folder name="IcaoPki">
@@ -24744,6 +24767,7 @@
 				<Content fileName="044894656133FF27065E0F61E46C7EE03329F8CB.cer" />
 				<Content fileName="08834653B3C4107AC7092610046CC8B812359ADE.cer" />
 				<Content fileName="09F153C0CD43A208548300FA801832068D48388C.cer" />
+				<Content fileName="0CC70551C599A42D14300E47A4A83DD87AD62CF4.cer" />
 				<Content fileName="0FACAB5B9577F1941DBC33714B1824E4DFF6CF52.cer" />
 				<Content fileName="1111997385D15242D37BE8D95EC5DF0BFC905405.cer" />
 				<Content fileName="1203378BCCC26725AB52215544698F8A27E26760.cer" />
@@ -24767,6 +24791,7 @@
 				<Content fileName="40E512116E5111B38F4800763970CFEEEA086BD6.cer" />
 				<Content fileName="413B166AA4026F1E7EE4DB1D97A434057B70945B.cer" />
 				<Content fileName="42C0B66AF12192CA9DFCEE08B8F66DC2586A751B.cer" />
+				<Content fileName="436CE3921D10922307EFD7A2F577ED7524467F1B.cer" />
 				<Content fileName="43718D42AFB817C4530427994D3B819BBD663DDE.cer" />
 				<Content fileName="4427C0E9E42EACF8E85A5DBE28C7E2C25CE06461.cer" />
 				<Content fileName="456AC978CD09AAB3306AD4B7B4471DE6720A5389.cer" />
@@ -24804,6 +24829,7 @@
 				<Content fileName="825EA303AD60FBB642681E8DAB438865697C8DE7.cer" />
 				<Content fileName="84F3AE22C10FA243199DEBBF4AC5937D3E2EFF70.cer" />
 				<Content fileName="85071DB7A046C93931CF52AA59DAF5FCEE380940.cer" />
+				<Content fileName="852DF7A70A512D83103DFBC9F628CB6B1CEE5591.cer" />
 				<Content fileName="85626287A0BAB7554D204C77E74BB015074F2EE6.cer" />
 				<Content fileName="85EF0E1F12AD81F3364DB17E4128C95468C2669E.cer" />
 				<Content fileName="88ED246556E1A1FADDFAD672A642BDBA8057CDF1.cer" />
@@ -24822,12 +24848,14 @@
 				<Content fileName="9EE5EABFD93A030AC193A11B2BF553C0575A85D9.cer" />
 				<Content fileName="9F7A29EEE68C62F4ACFD2CA12B488F5F58934719.cer" />
 				<Content fileName="A0DD25E8E50D75D1AA1DE75696993D004D159B82.cer" />
+				<Content fileName="A0F56552180CCBCC0FFD7D0DF39F8604C7C98F62.cer" />
 				<Content fileName="A24B2816083B7C05EEF3E9CC2116FDA97D13A271.cer" />
 				<Content fileName="A3EC9BA146E9D35613DDA937478B13C1CF8EE935.cer" />
 				<Content fileName="A43564CDC0DDC96D26C1F3A0A386B71C7314DC55.cer" />
 				<Content fileName="A54C95704C3B682DA07B10319BEEC608B04DA380.cer" />
 				<Content fileName="AA6B4B60DE45894C63B04B1C85084DFFF63CAE67.cer" />
 				<Content fileName="AD1DA2D3C7E64181EB73C591AA03BE74ED2F85A9.cer" />
+				<Content fileName="B0BF3BB9ECEBC720974C1D13A5905A1A613589A0.cer" />
 				<Content fileName="B3F17D843EF63103ED08948EF213D21F04F66430.cer" />
 				<Content fileName="B51B4A62752FB5045E08BCDEA895A8A1725B49F2.cer" />
 				<Content fileName="B67981DCEDE952E2E22D08B6B3EFF0F66E08C179.cer" />
@@ -24851,6 +24879,7 @@
 				<Content fileName="CFE77FF3AA8D8054778DF57005FC21FD86C4950B.cer" />
 				<Content fileName="D02A0AE48248E48A311304830AD605917449C6F1.cer" />
 				<Content fileName="D0BF64A5DADFE7D92D64FC608B0CEF605E55C781.cer" />
+				<Content fileName="D11A505E15ADEA5A61779CA4A2A991EC3949D1F9.cer" />
 				<Content fileName="D232A651C2F11EBEC0330D576B673A77D01AFF53.cer" />
 				<Content fileName="D33CC504C6F05A61DAE2E0C3812FFC419399A461.cer" />
 				<Content fileName="D3818DB01C5D9509F5021E45CB4763FD60CED0A3.cer" />
@@ -24866,6 +24895,7 @@
 				<Content fileName="E2E7CBBB2B79B0EDDB0641038C044E0A38D28C72.cer" />
 				<Content fileName="E565D3419863B7691FEABE085F2FF9280349ABAE.cer" />
 				<Content fileName="E60DEEB886387C46D2E62D74FEC2CA6DD95925ED.cer" />
+				<Content fileName="E94A91197072CD256951790E6CFE2386EDB09D6E.cer" />
 				<Content fileName="EA44695C0F74AD36B0983DFC753564435309152B.cer" />
 				<Content fileName="EBE3621E5A9814A3DA548E6BC5974AABDC508459.cer" />
 				<Content fileName="ED93F6970534E53552D282EFAC19D3B1A142A831.cer" />
