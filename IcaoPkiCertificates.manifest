@@ -671,6 +671,12 @@
 			<Content fileName="Download.url" />
 			<Content fileName="JPN.crl" />
 		</Folder>
+		<Folder name="KW">
+			<Content fileName="1April2016.cer" />
+			<Content fileName="1May2021Link.cer" />
+			<Content fileName="CSCA.crl" />
+			<Content fileName="Download.url" />
+		</Folder>
 	</Folder>
 	<Folder name="Root">
 		<Folder name="IcaoPki">
@@ -24923,9 +24929,19 @@
 				<Content fileName="7C368E27DC496DF5BDC83AE28742CA65BD8A321E.cer" />
 				<Content fileName="F35980616EAFA9ADFF3E7A99040A31B00BB6AE2C.cer" />
 			</Folder>
+			<Folder name="JP">
+				<Content fileName="3FA86A16A29014D552B93CD54CFB9114B6B31D1A.cer" />
+				<Content fileName="48458E886926A0D0B11D2B422FC59B459BE1EC7B.cer" />
+				<Content fileName="57022BAC6C44F1011F1D0CB4EBC913281FD5AE07.cer" />
+				<Content fileName="6AB4F29282BD9647F6FF2A02F7944D749E978463.cer" />
+			</Folder>
 			<Folder name="KN">
 				<Content fileName="8E2A681D01ADD84E7177BED6558DD47A4E144873.cer" />
 				<Content fileName="F9A819E5F5A3C340DFED8FA4A06E025CD3AB4110.cer" />
+			</Folder>
+			<Folder name="KW">
+				<Content fileName="6C814FA1D55B043F6928FD6002860862035DACE8.cer" />
+				<Content fileName="A34A661715946FBAC088A89399A9477F554F1FA3.cer" />
 			</Folder>
 			<Folder name="LU">
 				<Content fileName="02359F0F1409BCAD0B432FC40A83B29A6A4CAAD5.cer" />
