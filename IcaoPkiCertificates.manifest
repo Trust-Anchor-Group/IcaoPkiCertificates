@@ -575,6 +575,53 @@
 		<Folder name="FR">
 			<Content fileName="Download.url" />
 		</Folder>
+		<Folder name="GR">
+			<Content fileName="Download.url" />
+			<Folder name="csca_2006">
+				<Content fileName="CSCA_backup_lnk.cer" />
+				<Content fileName="CSCA_backup_ss.cer" />
+				<Content fileName="CSCA_main_ss.cer" />
+			</Folder>
+			<Folder name="csca_2011">
+				<Content fileName="csca_backup_lnk.zip" />
+				<Content fileName="csca_backup_ss.zip" />
+				<Content fileName="csca_main_lnk.zip" />
+				<Content fileName="csca_main_ss.zip" />
+			</Folder>
+			<Folder name="csca_2016">
+				<Content fileName="csca_backup_lnk.zip" />
+				<Content fileName="csca_backup_ss.zip" />
+				<Content fileName="csca_main_lnk.zip" />
+				<Content fileName="csca_main_ss.zip" />
+			</Folder>
+			<Folder name="csca_2021">
+				<Content fileName="csca_backup_lnk.zip" />
+				<Content fileName="csca_backup_ss.zip" />
+				<Content fileName="csca_main_lnk.zip" />
+				<Content fileName="csca_main_ss.zip" />
+			</Folder>
+			<Folder name="csca_2022">
+				<Content fileName="csca_backup_lnk.zip" />
+				<Content fileName="csca_backup_ss.zip" />
+				<Content fileName="csca_main_lnk.zip" />
+				<Content fileName="csca_main_ss.zip" />
+			</Folder>
+			<Folder name="csca_backup_lnk">
+				<Content fileName="csca_backup_link.cer" />
+			</Folder>
+			<Folder name="csca_backup_ss">
+				<Content fileName="csca_backup_ss.cer" />
+			</Folder>
+			<Folder name="csca_crl">
+				<Content fileName="CSCA.crl" />
+			</Folder>
+			<Folder name="csca_main_lnk">
+				<Content fileName="csca_main_lnk.cer" />
+			</Folder>
+			<Folder name="csca_main_ss">
+				<Content fileName="csca_main_ss.cer" />
+			</Folder>
+		</Folder>
 	</Folder>
 	<Folder name="Root">
 		<Folder name="IcaoPki">
@@ -23369,6 +23416,12 @@
 			<Folder name="GE">
 				<Content fileName="724761B26D147320CE34D248CEC8473FA2FAD0B0.cer" />
 				<Content fileName="85A86B5B23D870B0D89FF68428547E60198F53BC.cer" />
+			</Folder>
+			<Folder name="GR">
+				<Content fileName="10BE2576609BE16086EABBC10CDDCFAD7F2E3AD3.cer" />
+				<Content fileName="56F58F634EFA593EF3CD2986347BA3436F56B7EF.cer" />
+				<Content fileName="648CA48042F9D83A15AB5DA2DD0374E305C0DA5A.cer" />
+				<Content fileName="ECBCADE39B163389122E04667889E156699CCBDF.cer" />
 			</Folder>
 			<Folder name="GU">
 				<Content fileName="E88085E72EAC49BD767904B72F7D2D83809BC3B5.cer" />

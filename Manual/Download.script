@@ -10,6 +10,9 @@ LinkUri:=null;
 
 DownloadFiles(PageUrl,DownloadFolder):=
 (
+	if !System.IO.Directory.Exists(DownloadFolder) then
+		System.IO.Directory.CreateDirectory(DownloadFolder);
+
 	preview(printline("Downloading: "+PageUrl));
 	PageUrl:=Create(System.Uri,PageUrl);
 	Page:=GET(PageUrl,{Accept:"text/html"});
@@ -46,6 +49,11 @@ DownloadFiles(PageUrl,DownloadFolder):=
 					SaveFile(Content.Encoded,FileName);
 					Stat.NrFilesDownloaded++;
 				)
+				else if Content is Waher.Content.Zip.ZipFile then
+				(
+					SaveFile(Content.Binary,FileName);
+					Stat.NrFilesDownloaded++;
+				)
 				else
 					preview(printline("Type: "+Str(Content.GetType())));
 			)
@@ -79,12 +87,14 @@ ZeroStat():=
 //DownloadFiles("https://ants.gouv.fr/csca","C:\\My Projects\\IcaoPkiCertificates\\Manual\\FR");
 //DownloadFiles("https://poliisi.fi/en/csca","C:\\My Projects\\IcaoPkiCertificates\\Manual\\FI");
 //DownloadFiles("https://www.bsi.bund.de/DE/Themen/Oeffentliche-Verwaltung/Elektronische-Identitaeten/Public-Key-Infrastrukturen/CSCA/vorhergehendeZertifikate/vorhergehendeZertifikatecscaGermany_node.html","C:\\My Projects\\IcaoPkiCertificates\\Manual\\DE");
-
+//DownloadFiles("https://www.passport.gov.gr/e-passport/csca-epassport.html","C:\\My Projects\\IcaoPkiCertificates\\Manual\\GR");
 
 
 DownloadFiles("https://www.bmi.gv.at/downloads/csca.html","C:\\My Projects\\IcaoPkiCertificates\\Manual\\AT");
 DownloadFiles("https://certs.eid.belgium.be/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\BE");	// NOTE: Certificates available in PDF files also. These are not downloaded
 DownloadFiles("https://www.mvr.bg/en/ministry/about-ministry-of-internals/usefull-for-you/certificates-for-verification-of-e-documents","C:\\My Projects\\IcaoPkiCertificates\\Manual\\BG");
 DownloadFiles("https://pki.politsei.ee/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\EE");
+
+
 
 PrintStat();
