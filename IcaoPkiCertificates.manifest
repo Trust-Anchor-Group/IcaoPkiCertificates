@@ -22,6 +22,13 @@
 			<Content fileName="CSCA-Link_2024.crt" />
 			<Content fileName="Download.url" />
 		</Folder>
+		<Folder name="BA">
+			<Content fileName="CSCA_CertificateBa.der" />
+			<Content fileName="CSCA_SertifikatBA2014.der" />
+			<Content fileName="CSCA_SertifikatBA2025.der" />
+			<Content fileName="Link_CertificateBA.der" />
+			<Content fileName="Link_SertifikatBA2025.der" />
+		</Folder>
 		<Folder name="BE">
 			<Content fileName="belgiumrca.crt" />
 			<Content fileName="belgiumrca2.crt" />
@@ -1679,6 +1686,11 @@
 				<Content fileName="FF796D11544728876306673B13AA70DD1FCAD33A.cer" />
 				<Content fileName="FFF5F67B85CBB90820F86677BBBFD89E648164B5.cer" />
 				<Content fileName="FFFFFF459F2EFBE0AB3D265E7602C2AFB8E73AA4.cer" />
+			</Folder>
+			<Folder name="BA">
+				<Content fileName="45AD53B65AACCDADF445D55F474F8F2FF187CB67.cer" />
+				<Content fileName="8F326711052AEEF40F26E408E1773406C7BE4851.cer" />
+				<Content fileName="93235F131A434EE717B3F023E93661C6F8CDA82F.cer" />
 			</Folder>
 			<Folder name="BE">
 				<Content fileName="00D391676FE5EF4B3F8504AE8FFE8BD0E6D91291.cer" />

@@ -8,11 +8,11 @@ Binary:=Utf8Encode("Hello").GetType();
 ws:=Waher.Content.Xml.XML.WriterSettings(true,true);
 LinkUri:=null;
 
-DownloadFiles(PageUrl,DownloadFolder):=
+DownloadFiles(PageUrl,DownloadFolder,CheckExtension):=
 (
 	preview("Downloading: "+PageUrl);
 	PageUrl:=Create(System.Uri,PageUrl);
-	Page:=GET(PageUrl);
+	Page:=GET(PageUrl,{Accept:"text/html"});
 
 	sb:=Create(System.Text.StringBuilder);
 	w:=System.Xml.XmlWriter.Create(sb,ws);
@@ -24,9 +24,12 @@ DownloadFiles(PageUrl,DownloadFolder):=
 	
 	foreach Link in Links do
 	(
-		if System.Uri.TryCreate(Link,System.UriKind.RelativeOrAbsolute,LinkUri) and 
-			!LinkUri.IsAbsoluteUri and
-			System.Uri.TryCreate(PageUrl,LinkUri,LinkUri) then
+		Extension:=LowerCase(System.IO.Path.GetExtension(Link));
+
+		if (!CheckExtension or Extension=".cer" or Extension=".pem" or Extension=".crt") and
+		    System.Uri.TryCreate(Link,System.UriKind.RelativeOrAbsolute,LinkUri) and 
+		    !LinkUri.IsAbsoluteUri and
+		    System.Uri.TryCreate(PageUrl,LinkUri,LinkUri) then
 		(
 			try
 			(
@@ -55,5 +58,17 @@ PrintStat():=
 	printline("Nr Errors: "+Stat.NrErrors);
 );
 
-DownloadFiles("https://certs.eid.belgium.be/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\BE");
+ZeroStat():=
+(
+	Stat.NrFilesDownloaded:=0;
+	Stat.NrErrors:=0;
+);
+
+//DownloadFiles("https://www.passports.gov.au/help/australian-country-signing-certificate-authority-csca","C:\\My Projects\\IcaoPkiCertificates\\Manual\\AU",true);
+//DownloadFiles("https://www.iddeea.gov.ba/en/pki-system-for-digital-signing-of-travel-documents-and-e-ids/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\BA",false);
+
+DownloadFiles("https://www.bmi.gv.at/downloads/csca.html","C:\\My Projects\\IcaoPkiCertificates\\Manual\\AT",true);
+DownloadFiles("https://certs.eid.belgium.be/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\BE",true);	// NOTE: Certificates available in PDF files also. These are not downloaded
+DownloadFiles("https://www.bmi.gv.at/downloads/csca.html","C:\\My Projects\\IcaoPkiCertificates\\Manual\\AT",true);
+
 PrintStat();

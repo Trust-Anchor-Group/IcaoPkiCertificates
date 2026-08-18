@@ -126,7 +126,8 @@ internal class Program
 			{
 				string[] Files = 
 					Directory.GetFiles(FolderName, "*.cer", SearchOption.AllDirectories).Join(
-					Directory.GetFiles(FolderName, "*.crt", SearchOption.AllDirectories));
+					Directory.GetFiles(FolderName, "*.crt", SearchOption.AllDirectories)).Join(
+					Directory.GetFiles(FolderName, "*.der", SearchOption.AllDirectories));
 
 				foreach (string FileName in Files)
 				{
