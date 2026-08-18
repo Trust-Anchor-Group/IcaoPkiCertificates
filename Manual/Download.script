@@ -1,0 +1,59 @@
+Stat:=
+{
+	NrFilesDownloaded:0,
+	NrErrors:0
+};
+
+Binary:=Utf8Encode("Hello").GetType();
+ws:=Waher.Content.Xml.XML.WriterSettings(true,true);
+LinkUri:=null;
+
+DownloadFiles(PageUrl,DownloadFolder):=
+(
+	preview("Downloading: "+PageUrl);
+	PageUrl:=Create(System.Uri,PageUrl);
+	Page:=GET(PageUrl);
+
+	sb:=Create(System.Text.StringBuilder);
+	w:=System.Xml.XmlWriter.Create(sb,ws);
+	Page.Export(w);
+	w.Flush();
+	x:=Xml(sb.ToString());
+	Links:=[foreach Node in x.SelectNodes("//A/@href") do Node.Value];
+
+	
+	foreach Link in Links do
+	(
+		if System.Uri.TryCreate(Link,System.UriKind.RelativeOrAbsolute,LinkUri) and 
+			!LinkUri.IsAbsoluteUri and
+			System.Uri.TryCreate(PageUrl,LinkUri,LinkUri) then
+		(
+			try
+			(
+				preview("Downloading: "+Str(LinkUri));
+				Content:=Get(LinkUri);
+				if Content is Binary then
+				(
+					FileName:=System.IO.Path.GetFileName(Link);
+					FileName:=System.IO.Path.Combine(DownloadFolder,FileName);
+					SaveFile(Content,FileName);
+					Stat.NrFilesDownloaded++;
+				)
+			)
+			catch
+			(
+				printline("Error ("+Link+"): "+Exception.Message);
+				Stat.NrErrors++;
+			)
+		)
+	)
+);
+
+PrintStat():=
+(
+	printline("Nr Files Downloaded: "+Stat.NrFilesDownloaded);
+	printline("Nr Errors: "+Stat.NrErrors);
+);
+
+DownloadFiles("https://certs.eid.belgium.be/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\BE");
+PrintStat();
