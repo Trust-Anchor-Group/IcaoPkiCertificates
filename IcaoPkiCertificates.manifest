@@ -460,6 +460,17 @@
 				<Content fileName="csca-cy_11_2018_self_signed.cer" />
 			</Folder>
 		</Folder>
+		<Folder name="DK">
+			<Content fileName="CSCA-2006.pem" />
+			<Content fileName="CSCA-2009.pem" />
+			<Content fileName="CSCA-2011.pem" />
+			<Content fileName="CSCA-2015-link.pem" />
+			<Content fileName="CSCA-2015.pem" />
+			<Content fileName="CSCA-2019-link.pem" />
+			<Content fileName="CSCA-2019.pem" />
+			<Content fileName="CSCA-2023-link.pem" />
+			<Content fileName="CSCA-2023.pem" />
+		</Folder>
 	</Folder>
 	<Folder name="Root">
 		<Folder name="IcaoPki">
@@ -15413,6 +15424,14 @@
 				<Content fileName="EE086EE4EE1D066DC151CB61B02DB0A7C50881D3.cer" />
 				<Content fileName="EEFC5DA0CD9EA274C6B8ADE15DB83EF6209D8E12.cer" />
 				<Content fileName="F21EFF3A2485E9ABA282EC394FDD91FF6BBDA696.cer" />
+			</Folder>
+			<Folder name="DK">
+				<Content fileName="36256D198B3161989234B916786DE697882A7461.cer" />
+				<Content fileName="4695AD187191821F.cer" />
+				<Content fileName="4B959F54EF4BF82D.cer" />
+				<Content fileName="5EC388AD3CCB913E8A3BC461034CA558BA9F2917.cer" />
+				<Content fileName="A910505B0820E86217A4BB583F23A9F064B9EDBD.cer" />
+				<Content fileName="E89DA7EC272D9E5D6556455BD57F58E88A53E732.cer" />
 			</Folder>
 			<Folder name="ES">
 				<Content fileName="00D38CAF4B70CA8DF86CFACFFE8D2D83E3602F51.cer" />
