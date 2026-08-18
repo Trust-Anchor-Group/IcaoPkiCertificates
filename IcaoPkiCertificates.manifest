@@ -496,6 +496,21 @@
 			<Content fileName="csca.crl" />
 			<Content fileName="spoc.crl" />
 		</Folder>
+		<Folder name="FI">
+			<Content fileName="cscafin3.crt" />
+			<Content fileName="cscafin4.crt" />
+			<Content fileName="cscafin5.crt" />
+			<Content fileName="cscafin6.crt" />
+			<Content fileName="cscafinc.crl" />
+			<Content fileName="cslifin3.crt" />
+			<Content fileName="cslifin5.crt" />
+			<Content fileName="cslifin6.crt" />
+			<Content fileName="Download.url" />
+			<Content fileName="FIN.crl" />
+		</Folder>
+		<Folder name="FR">
+			<Content fileName="Download.url" />
+		</Folder>
 	</Folder>
 	<Folder name="Root">
 		<Folder name="IcaoPki">
@@ -15727,16 +15742,19 @@
 				<Content fileName="84FC6EE50653A23E4C100F679DC4936B4C4D9755.cer" />
 				<Content fileName="864683A6BC8F78BC7C26A7B72DF747257ACFDB5B.cer" />
 				<Content fileName="86A16627DF3DCABBC1D94442E8803DA6420C93FC.cer" />
+				<Content fileName="87589C29D9769CF5B7EA661A3C8CA5FCA268BE94.cer" />
 				<Content fileName="8C49DCB49F91238C7A9AA2CDC199A32785C5926C.cer" />
 				<Content fileName="911E508553DEA92B6C9BC1B5DA709F6F47DB0CC1.cer" />
 				<Content fileName="949177B04896587914D849C5FC5EC0BB68E342AF.cer" />
 				<Content fileName="94D3D34CB55FB2AC2B201114327FE13BD946DDA2.cer" />
 				<Content fileName="95C2B387B3212F3374B3009B21D21A35F8A02105.cer" />
+				<Content fileName="9A594B5BF9297A9D7DD9A9A72154B85900D24642.cer" />
 				<Content fileName="9C98E5B754694DF7ABCA18ADF743DD8272EE1827.cer" />
 				<Content fileName="9EF14EA6A290847EE060C85778B128BD70C8D383.cer" />
 				<Content fileName="9F11643202C8F0D4322C9ED83346D43D06CB0CAE.cer" />
 				<Content fileName="A3A4A803CA274D58BAC3BB4476DAAAE572342A36.cer" />
 				<Content fileName="A616E216664C9BCE56C561BEF3010238B5DC37E0.cer" />
+				<Content fileName="A98BEA8CD399D0FF12BCD854D23747E61A1FC004.cer" />
 				<Content fileName="AAD07E5D02BB0D25D3393804099DEC12586F0353.cer" />
 				<Content fileName="B0EF44B19A019465D96FC88B5533833CE91DCF4D.cer" />
 				<Content fileName="B1B91B8F403EE8C65C5D9B8C17DB70D664B4B6AD.cer" />
@@ -15755,6 +15773,7 @@
 				<Content fileName="CCE40A97E2FD626681C919D01C40B8E56FC2320B.cer" />
 				<Content fileName="CFD63277C5742D3C9C3B9D02FA62FD32C61912E0.cer" />
 				<Content fileName="D24567654DDFD1EFDF0F17F35B38F2FDE2CE8FE6.cer" />
+				<Content fileName="D69F6CA7F2E0AB2C5AFAF19E697268364D31D393.cer" />
 				<Content fileName="DA66624669A77F446C40C67755B85DAA5D83E1E3.cer" />
 				<Content fileName="DC400BC08D5282886E44513760D3E93DC39DC5EA.cer" />
 				<Content fileName="E59D258205D5F6906A3C4FBC8B3D7D8D2EF6B0F5.cer" />

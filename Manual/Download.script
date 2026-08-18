@@ -76,6 +76,9 @@ ZeroStat():=
 //DownloadFiles("https://csca.crmd.moi.gov.cy/PKI/CSCA/Root_Certificate","C:\\My Projects\\IcaoPkiCertificates\\Manual\\CY");
 //DownloadFiles("https://archiv.mv.gov.cz/mvcren/article/csca-certificates-108056.aspx","C:\\My Projects\\IcaoPkiCertificates\\Manual\\CZ");
 //DownloadFiles("https://politi.dk/en/law-and-information/the-danish-country-signing-ca-csca","C:\\My Projects\\IcaoPkiCertificates\\Manual\\DK");
+//DownloadFiles("https://ants.gouv.fr/csca","C:\\My Projects\\IcaoPkiCertificates\\Manual\\FR");
+//DownloadFiles("https://poliisi.fi/en/csca","C:\\My Projects\\IcaoPkiCertificates\\Manual\\FI");
+
 
 
 DownloadFiles("https://www.bmi.gv.at/downloads/csca.html","C:\\My Projects\\IcaoPkiCertificates\\Manual\\AT");
