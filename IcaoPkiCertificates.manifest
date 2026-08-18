@@ -433,6 +433,33 @@
 				<Content fileName="Link certificate for (240528191214Z-371116000000Z) CN=CSCA,OU=Servicio de Registro Civil e Identificación,O=Ministerio de Justicia y Derechos Humanos,C=CL.cer" />
 			</Folder>
 		</Folder>
+		<Folder name="CY">
+			<Content fileName="cyp.crl" />
+			<Folder name="csca-cy_03_2024_link">
+				<Content fileName="link_cert - Copy.crt" />
+			</Folder>
+			<Folder name="csca-cy_03_2024_self_signed">
+				<Content fileName="CSCACYPRUS_20240313.cacert.crt" />
+			</Folder>
+			<Folder name="csca-cy_07_2020_link">
+				<Content fileName="2020_07_02-2035_07_02_link.cer" />
+			</Folder>
+			<Folder name="csca-cy_07_2020_self_signed">
+				<Content fileName="2020_07_02-2035_07_02.cer" />
+			</Folder>
+			<Folder name="csca-cy_11_2014_link">
+				<Content fileName="csca-cy_11_2014_link.cer" />
+			</Folder>
+			<Folder name="csca-cy_11_2014_self_signed">
+				<Content fileName="csca-cy_11_2014_self_signed.cer" />
+			</Folder>
+			<Folder name="csca-cy_11_2018_link">
+				<Content fileName="csca-cy_11_2018_link.cer" />
+			</Folder>
+			<Folder name="csca-cy_11_2018_self_signed">
+				<Content fileName="csca-cy_11_2018_self_signed.cer" />
+			</Folder>
+		</Folder>
 	</Folder>
 	<Folder name="Root">
 		<Folder name="IcaoPki">
@@ -15347,6 +15374,12 @@
 			<Folder name="CO">
 				<Content fileName="229F5C8A17EED65826B300C3E44AE0EE6B999F6D.cer" />
 				<Content fileName="391CBD691C56F5BBE3304A662BC457F3BB201DA9.cer" />
+			</Folder>
+			<Folder name="CY">
+				<Content fileName="5AB8F226A330BFF176C859CF82279BB07ECD9596.cer" />
+				<Content fileName="66C2C52E36DF1D1A551CFA1B32C5E2CD83AA1367.cer" />
+				<Content fileName="76ECB9957793744901C6E392F55327426FA10B50.cer" />
+				<Content fileName="9FF3309FA336EC29446816C0C274CA8B6A8E881A.cer" />
 			</Folder>
 			<Folder name="DE">
 				<Content fileName="0230D4F5E312E6C7F460601F790B1A44E35B09F2.cer" />

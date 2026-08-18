@@ -66,6 +66,7 @@ ZeroStat():=
 
 //DownloadFiles("https://www.passports.gov.au/help/australian-country-signing-certificate-authority-csca","C:\\My Projects\\IcaoPkiCertificates\\Manual\\AU",true);
 //DownloadFiles("https://www.iddeea.gov.ba/en/pki-system-for-digital-signing-of-travel-documents-and-e-ids/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\BA",false);
+//DownloadFiles("https://csca.crmd.moi.gov.cy/PKI/CSCA/Root_Certificate","C:\\My Projects\\IcaoPkiCertificates\\Manual\\CY",false);
 
 DownloadFiles("https://www.bmi.gv.at/downloads/csca.html","C:\\My Projects\\IcaoPkiCertificates\\Manual\\AT",true);
 DownloadFiles("https://certs.eid.belgium.be/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\BE",true);	// NOTE: Certificates available in PDF files also. These are not downloaded
