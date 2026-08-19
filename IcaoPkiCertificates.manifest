@@ -677,6 +677,14 @@
 			<Content fileName="CSCA.crl" />
 			<Content fileName="Download.url" />
 		</Folder>
+		<Folder name="LT">
+			<Content fileName="csca_crl.crl" />
+			<Content fileName="CSCA_Lithuania_006_link_007.cer" />
+			<Content fileName="CSCA_Lithuania_007.cer" />
+			<Content fileName="Download.url" />
+			<Content fileName="spoc_test.crl" />
+			<Content fileName="spoc.crl" />
+		</Folder>
 	</Folder>
 	<Folder name="Root">
 		<Folder name="IcaoPki">
@@ -24942,6 +24950,9 @@
 			<Folder name="KW">
 				<Content fileName="6C814FA1D55B043F6928FD6002860862035DACE8.cer" />
 				<Content fileName="A34A661715946FBAC088A89399A9477F554F1FA3.cer" />
+			</Folder>
+			<Folder name="LT">
+				<Content fileName="C50376C999925A4659400D792C6AB24DFF4EEA7B.cer" />
 			</Folder>
 			<Folder name="LU">
 				<Content fileName="02359F0F1409BCAD0B432FC40A83B29A6A4CAAD5.cer" />

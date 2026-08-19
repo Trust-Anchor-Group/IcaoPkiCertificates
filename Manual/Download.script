@@ -132,8 +132,8 @@ DownloadFiles("https://pki.politsei.ee/","C:\\My Projects\\IcaoPkiCertificates\\
 DownloadFiles("https://www.skra.is/english/people/passport-and-id-card/passport/various-information-on-passports/security-of-icelandic-passports/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\IS");
 DownloadFiles("https://csca-ita.interno.gov.it/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\IT");
 DownloadFiles("https://www.mofa.go.jp/ca/pss/page23e_000598.html","C:\\My Projects\\IcaoPkiCertificates\\Manual\\JP");
+DownloadFiles("https://www.csca.lt/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\LT");
 
-DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
 DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
 DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
 DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
