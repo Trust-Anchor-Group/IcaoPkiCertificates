@@ -4,6 +4,7 @@ Stat:=
 	NrErrors:0
 };
 
+Timeout:=10*60*60*1000;
 Binary:=Utf8Encode("Hello").GetType();
 ws:=Waher.Content.Xml.XML.WriterSettings(true,true);
 LinkUri:=null;
@@ -41,7 +42,8 @@ DownloadFiles(PageUrl,DownloadFolder):=
 	hs:=Create(System.Collections.Generic.HashSet,System.String);
 	foreach Node in x.SelectNodes("//A/@href") do hs.Add(Node.Value);
 	Links:=[foreach Link in hs : Link];
-	preview(printline(Str(count(Links))+" unique links in document."));
+	preview(printline(Str(c:=count(Links))+" unique links in document."));
+	i:=0;
 	
 	foreach Link in Links do
 	(
@@ -49,7 +51,7 @@ DownloadFiles(PageUrl,DownloadFolder):=
 		(
 			try
 			(
-				preview(printline("Downloading: "+Str(LinkUri)));
+				preview(printline("Downloading (" + ++i + "/" + c + "): "+Str(LinkUri)));
 
 				Content:=Get(LinkUri,{
 					"Accept": "*/*",
@@ -124,6 +126,14 @@ ZeroStat():=
 //DownloadFiles("https://www.bsi.bund.de/DE/Themen/Oeffentliche-Verwaltung/Elektronische-Identitaeten/Public-Key-Infrastrukturen/CSCA/vorhergehendeZertifikate/vorhergehendeZertifikatecscaGermany_node.html","C:\\My Projects\\IcaoPkiCertificates\\Manual\\DE");
 //DownloadFiles("https://www.passport.gov.gr/e-passport/csca-epassport.html","C:\\My Projects\\IcaoPkiCertificates\\Manual\\GR");
 //DownloadFiles("https://epp.moi.gov.kw/csca/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\KW");
+//DownloadFiles("https://immigration.gov.ng/pki-pkd/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\NG");
+//DownloadFiles("https://www.politiet.no/en/english/csca#country-signing-certificate-authority-csca","C:\\My Projects\\IcaoPkiCertificates\\Manual\\NO");
+//DownloadFiles("https://www.gov.pl/web/cyfryzacja/certificates-of-the-csca","C:\\My Projects\\IcaoPkiCertificates\\Manual\\PL");
+//DownloadFiles("https://irn.justica.gov.pt/Documentos-de-Identificacao/Certificados-CSCA","C:\\My Projects\\IcaoPkiCertificates\\Manual\\PT");
+//DownloadFiles("https://www.si-trust.gov.si/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\SI");
+//DownloadFiles("https://www.dnielectronico.es/PortalDNIe/PRF1_Cons02.action?pag=REF_1093","C:\\My Projects\\IcaoPkiCertificates\\Manual\\ES");
+//DownloadFiles("https://www.bit.admin.ch/en/sg-pki-csca-cvca-en","C:\\My Projects\\IcaoPkiCertificates\\Manual\\CH");
+//DownloadFiles("https://hmpo.gov.uk/csca","C:\\My Projects\\IcaoPkiCertificates\\Manual\\GB");
 
 DownloadFiles("https://www.bmi.gv.at/downloads/csca.html","C:\\My Projects\\IcaoPkiCertificates\\Manual\\AT");
 DownloadFiles("https://certs.eid.belgium.be/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\BE");	// NOTE: Certificates available in PDF files also. These are not downloaded
@@ -133,16 +143,11 @@ DownloadFiles("https://www.skra.is/english/people/passport-and-id-card/passport/
 DownloadFiles("https://csca-ita.interno.gov.it/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\IT");
 DownloadFiles("https://www.mofa.go.jp/ca/pss/page23e_000598.html","C:\\My Projects\\IcaoPkiCertificates\\Manual\\JP");
 DownloadFiles("https://www.csca.lt/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\LT");
-
-DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
-DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
-DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
-DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
-DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
-DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
-DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
-DownloadFiles("","C:\\My Projects\\IcaoPkiCertificates\\Manual\\");
-
+DownloadFiles("https://www.imi.gov.my/index.php/perkhidmatan-utama/pasport/the-malaysian-country-signing-ca-csca-bm/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\MY");
+DownloadFiles("https://www.npkd.nl/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\NL");
+DownloadFiles("https://pasapoarte.mai.gov.ro/csca.html","C:\\My Projects\\IcaoPkiCertificates\\Manual\\RO");
+DownloadFiles("https://ca.mup.gov.rs/ca/ca_en/start/eputna_isprava/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\RS");
+DownloadFiles("https://polisen.se/en/services-and-permits/passport-and-national-id-card/swedish-certificates-and-crls/country-signing-certificate-authority-csca-sweden/","C:\\My Projects\\IcaoPkiCertificates\\Manual\\SE");
 
 
 PrintStat();
