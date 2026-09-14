@@ -1,7 +1,7 @@
 ICAO Public-Key-Infrastructure Certificates
 ==============================================
 
-[ICAO publishes](https://pkddownloadsg.icao.int/) a list of public certificates used by
+[ICAO publishes](https://pkddownload1.icao.int/) a list of public certificates used by
 certificate authorities in issuing certificates for electronic travel documents. When
 validating such certificates, the application needs to access the published certificates from 
 ICAO, as the normal certificate validation mechanism will not work otherwise.
@@ -61,7 +61,7 @@ for validation of electronic travel documents that reference them using their AK
 
 ICAO regularly updates the list of public certificates, and new certificates may be added or 
 old certificates may be removed. To update the list of certificates, you first need to
-[downloadt hem from ICAO](https://pkddownloadsg.icao.int/). To get a complete list, you need
+[downloadt hem from ICAO](https://pkddownload1.icao.int/). To get a complete list, you need
 to download the following two files:
 
 * `icaopkd-001-complete-009875.ldif`, containg eMRTD Certificates (DSC, BCSC, BCSC-NC) and CRL.
