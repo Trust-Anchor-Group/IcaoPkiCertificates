@@ -438,11 +438,15 @@ internal class Program
 		}
 
 		string FileName = Path.Combine(OutputFolder, SubjectKeyId + ".cer");
+		bool Duplicate = false;
 
 		Status.ExistingFiles.Remove(FileName);
 
 		if (Status.FilesProcessed.ContainsKey(FileName))
+		{
 			Status.NrSubjectKeyIdDuplicates++;
+			Duplicate = true;
+		}
 		else
 			Status.FilesProcessed[FileName] = true;
 
@@ -451,7 +455,7 @@ internal class Program
 			Status.NrNewCertificates++;
 			File.WriteAllBytes(FileName, Bin);
 		}
-		else
+		else if (!Duplicate)
 		{
 			byte[] Bin2 = File.ReadAllBytes(FileName);
 			if (!AreEqual(Bin, Bin2))
