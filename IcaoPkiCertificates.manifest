@@ -308,12 +308,10 @@
 			<Content fileName="CSCA.2021.link.crt" />
 			<Content fileName="CSCA.2021.link.pem" />
 			<Content fileName="CSCA.2021.pem" />
-			<Content fileName="CSCAEC_BE_2.crt" />
 			<Content fileName="CSCAEC_BE_2.pem" />
 			<Content fileName="CSCAEC_BE_3_20170926_1418.crl" />
 			<Content fileName="CSCAEC_BE_3.crt" />
 			<Content fileName="CSCAEC_BE_3.pem" />
-			<Content fileName="CSCAEC_BE.crt" />
 			<Content fileName="CSCAPKI_BE_02.crt" />
 			<Content fileName="Download.url" />
 			<Content fileName="foreigner200601.crt" />
