@@ -134,6 +134,31 @@ internal class Program
 					try
 					{
 						byte[] Bin = File.ReadAllBytes(FileName);
+
+						// Test if the file is a PEM certificate that needs to be
+						// converted from BASE64 encoding first.
+						try
+						{
+							string s = Encoding.ASCII.GetString(Bin);
+							
+							i = s.IndexOf("-----BEGIN CERTIFICATE-----");
+							if (i >= 0)
+							{
+								s = s[(i + 27)..].TrimStart();
+								i = s.IndexOf("-----END CERTIFICATE-----");
+								if (i > 0)
+								{
+									s = s[..i].TrimEnd();
+									Bin = Convert.FromBase64String(s);
+									Status.NrConversions++;
+								}
+							}
+						}
+						catch (Exception)
+						{
+							// Ignore
+						}
+
 						X509Certificate2 Certificate = new(Bin);
 						CheckCertificate(Certificate, Bin, Status, OutputFolder);
 					}
@@ -153,7 +178,7 @@ internal class Program
 						i = s.IndexOf("-----BEGIN CERTIFICATE-----");
 						if (i >= 0)
 						{
-							s = s[27..].TrimStart();
+							s = s[(i + 27)..].TrimStart();
 							i = s.IndexOf("-----END CERTIFICATE-----");
 
 							if (i > 0)
@@ -276,12 +301,14 @@ internal class Program
 			Console.Out.WriteLine("Nr Records: " + Status.NrRecords.ToString() + " (including version)");
 			Console.Out.WriteLine("Nr Certificates: " + Status.NrCertificates.ToString());
 			Console.Out.WriteLine("Nr Master Lists: " + Status.NrMasterLists.ToString());
+			Console.Out.WriteLine("Nr Conversions: " + Status.NrConversions.ToString());
 			Console.Out.WriteLine("Nr Errors: " + Status.NrErrors.ToString());
 			Console.Out.WriteLine("Nr No Country CA: " + Status.NrNoCountry.ToString());
 			Console.Out.WriteLine("Nr No Subject Key ID: " + Status.NrNoSubjectKeyId.ToString());
 			Console.Out.WriteLine("Nr Subject Key duplicates: " + Status.NrSubjectKeyIdDuplicates.ToString());
 			Console.Out.WriteLine("Nr New Folders: " + Status.NrNewFolders.ToString());
 			Console.Out.WriteLine("Nr New Files: " + Status.NrNewCertificates.ToString());
+			Console.Out.WriteLine("Nr Updated Files: " + Status.NrUpdatedCertificates.ToString());
 			Console.Out.WriteLine("Nr Old Files: " + Status.ExistingFiles.Count.ToString());
 
 			if (DeleteOld && Status.ExistingFiles.Count > 0)
@@ -334,10 +361,12 @@ internal class Program
 		public int NrCertificates = 0;
 		public int NrMasterLists = 0;
 		public int NrErrors = 0;
+		public int NrConversions = 0;
 		public int NrNoCountry = 0;
 		public int NrNoSubjectKeyId = 0;
 		public int NrSubjectKeyIdDuplicates = 0;
 		public int NrNewCertificates = 0;
+		public int NrUpdatedCertificates = 0;
 		public int NrNewFolders = 0;
 	}
 
@@ -422,6 +451,31 @@ internal class Program
 			Status.NrNewCertificates++;
 			File.WriteAllBytes(FileName, Bin);
 		}
+		else
+		{
+			byte[] Bin2 = File.ReadAllBytes(FileName);
+			if (!AreEqual(Bin, Bin2))
+			{
+				Status.NrUpdatedCertificates++;
+				File.WriteAllBytes(FileName, Bin);
+			}
+		}
+	}
+
+	private static bool AreEqual(byte[] Bin1, byte[] Bin2)
+	{
+		int i, c = Bin1.Length;
+
+		if (c != Bin2.Length)
+			return false;
+
+		for (i = 0; i < c; i++)
+		{
+			if (Bin1[i] != Bin2[i])
+				return false;
+		}
+
+		return true;
 	}
 
 	private static void CheckMasterList(string Base64, Status Status, string OutputFolder)
