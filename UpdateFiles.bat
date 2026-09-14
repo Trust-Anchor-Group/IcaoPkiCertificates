@@ -1,6 +1,10 @@
 ExtractCertificates\bin\Debug\net8.0\ExtractCertificates.exe ^
-	-i ..\icaopkd-002-complete-000340.ldif ^
-	-i ..\icaopkd-001-complete-009875.ldif ^
+	-i ..\icaopkd-002-complete-530.ldif ^
+	-i ..\icaopkd-001-complete-10332.ldif ^
+	-i ..\icaopkd-003-complete-10.ldif ^
+	-i ..\icaopkd-004-complete-10.ldif ^
+	-i ..\icaopkd-005-complete-11.ldif ^
+	-f Manual ^
 	-o Root\IcaoPki ^
 	-d
 
