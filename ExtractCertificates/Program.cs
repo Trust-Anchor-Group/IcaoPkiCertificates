@@ -9,21 +9,21 @@ using Waher.Runtime.Collections;
 internal class Program
 {
 	/// <summary>
-	/// Extracts certificates from LDIF files or binary CSCA master lists and saves them
+	/// Extracts certificate information from an LDIF file and saves the certificates
 	/// in an output folder, ordered by country and Subject Key Identifier.
 	/// 
 	/// Syntax:
 	/// ExtractCertificates (-i INPUT_FILE | -f INPUT_FOLDER)* -o OUTPUT_FOLDER[ -d][ -h]
 	/// 
 	/// Where:
-	/// INPUT_FILE     is an LDIF file or a binary CSCA master list (.ml or .mls).
+	/// INPUT_FILE     is the file name of the LDIF file containing the certificates.
 	/// INPUT_FOLDER   is the folder containing certificate files.
 	/// OUTPUT_FOLDER  is the folder where the extracted certificates will be saved.
 	/// 
 	/// You can process multiple input files by providing multiple -i arguments, but only 
 	/// one output folder with -o.
 	/// 
-	/// If -d is present, old files no longer present in the inputs will be deleted
+	/// If -d is present, old files no longer present in the LDIF file will be deleted 
 	/// from the output folder.
 	/// 
 	/// Use -h or -? to show this help message.
@@ -83,20 +83,20 @@ internal class Program
 
 			if (Help || InputFileNames.Count == 0 && string.IsNullOrEmpty(OutputFolder))
 			{
-				Console.Out.WriteLine("Extracts certificates from LDIF files or binary CSCA master lists and saves them");
+				Console.Out.WriteLine("Extracts certificate information from an LDIF file and saves the certificates");
 				Console.Out.WriteLine("in an output folder, ordered by country and Subject Key Identifier.");
 				Console.Out.WriteLine();
 				Console.Out.WriteLine("Syntax:");
 				Console.Out.WriteLine("ExtractCertificates -i INPUT_FILE -o OUTPUT_FOLDER[ -d][ -h]");
 				Console.Out.WriteLine();
 				Console.Out.WriteLine("Where:");
-				Console.Out.WriteLine("INPUT_FILE     is an LDIF file or a binary CSCA master list (.ml or .mls).");
+				Console.Out.WriteLine("INPUT_FILE     is the file name of the LDIF file containing the certificates.");
 				Console.Out.WriteLine("OUTPUT_FOLDER  is the folder where the extracted certificates will be saved.");
 				Console.Out.WriteLine();
 				Console.Out.WriteLine("You can process multiple input files by providing multiple -i arguments, but only");
 				Console.Out.WriteLine("one output folder with -o.");
 				Console.Out.WriteLine();
-				Console.Out.WriteLine("If -d is present, old files no longer present in the inputs will be deleted");
+				Console.Out.WriteLine("If -d is present, old files no longer present in the LDIF file will be deleted ");
 				Console.Out.WriteLine("from the output folder.");
 				Console.Out.WriteLine();
 				Console.Out.WriteLine("Use -h or -? to show this help message.");
@@ -204,15 +204,6 @@ internal class Program
 				string InputFileName = Path.GetFullPath(FileName);
 				if (!File.Exists(InputFileName))
 					throw new Exception("Input file " + InputFileName + " does not exist.");
-
-				string Extension = Path.GetExtension(InputFileName);
-				if (Extension.Equals(".ml", StringComparison.OrdinalIgnoreCase) ||
-					Extension.Equals(".mls", StringComparison.OrdinalIgnoreCase))
-				{
-					Status.NrMasterLists++;
-					CheckMasterList(File.ReadAllBytes(InputFileName), Status, OutputFolder);
-					continue;
-				}
 
 				using FileStream f = File.OpenRead(InputFileName);
 				using StreamReader r = new(f);
@@ -493,11 +484,7 @@ internal class Program
 
 	private static void CheckMasterList(string Base64, Status Status, string OutputFolder)
 	{
-		CheckMasterList(Convert.FromBase64String(Base64), Status, OutputFolder);
-	}
-
-	private static void CheckMasterList(byte[] Bin, Status Status, string OutputFolder)
-	{
+		byte[] Bin = Convert.FromBase64String(Base64);
 		bool ProcessingCert = false;
 
 		try
