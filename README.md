@@ -8,7 +8,8 @@ ICAO, as the normal certificate validation mechanism will not work otherwise.
 
 This repository contains a copy of the certificates published by ICAO, and a utility 
 application called [`ExtractCertificates`](ExtractCertificates) that can extract the 
-certificates from the LDIF files published by ICAO. Certificates are ordered by country and 
+certificates from the LDIF files and public CSCA master lists published by ICAO.
+Certificates are ordered by country and
 Subject Key Identifier (SKI). Certificates available in Travel documents reference these 
 issuer certificates using a corresponding Auhority Key Identifier (AKI) that matches the 
 SKI of the issuer certificate.
@@ -20,10 +21,10 @@ certificates, and can be used to create a distributable package for the TAG Neur
 ### ExtractCertificates
 
 The `ExtractCertificates` utility application can be used to extract certificates from 
-ICAO LDIF files. It takes as input the path to the LDIF file, and outputs the extracted
-certificates in CER format. The LDIF file can encode certificates directly, or include
-signed master files containing sets of certificates. The application can be run from the 
-command line, and supports the following arguments:
+ICAO LDIF files and standalone binary CSCA master lists (`.ml` or `.mls`). It outputs the
+extracted certificates in CER format. An LDIF file can encode certificates directly, or
+include signed master lists containing sets of certificates. The application can be run
+from the command line, and supports the following arguments:
 
 ```
 ExtractCertificates -i INPUT_FILE -o OUTPUT_FOLDER[ -d][ -h]
@@ -31,13 +32,13 @@ ExtractCertificates -i INPUT_FILE -o OUTPUT_FOLDER[ -d][ -h]
 
 Where:
 
-- `INPUT_FILE` is the path to the LDIF file containing the certificates.
+- `INPUT_FILE` is the path to an LDIF file or a binary CSCA master list (`.ml` or `.mls`).
 - `OUTPUT_FOLDER` is the path to the folder where the extracted certificates will be saved.
 
 You can process multiple input files by providing multiple -i arguments, but only 
 one output folder with -o.
 
-If `-d` is present, old files no longer present in the LDIF file will be deleted from the 
+If `-d` is present, old files no longer present in the inputs will be deleted from the
 output folder.
 
 Use `-h` or `-?` to show the Command-Line help message.
@@ -61,16 +62,26 @@ for validation of electronic travel documents that reference them using their AK
 
 ICAO regularly updates the list of public certificates, and new certificates may be added or 
 old certificates may be removed. To update the list of certificates, you first need to
-[downloadt hem from ICAO](https://pkddownload1.icao.int/). To get a complete list, you need
-to download the following two files:
+[download them from ICAO](https://pkddownload1.icao.int/). To get a complete list, you need
+to download all five files listed under *Download the latest LDIF (.ldif) file*:
 
-* `icaopkd-001-complete-009875.ldif`, containg eMRTD Certificates (DSC, BCSC, BCSC-NC) and CRL.
-* `icaopkd-002-complete-000340.ldif`, containing the CSCA MasterList.
+* `icaopkd-001-complete-<version>.ldif`, containing eMRTD PKI objects (CRL, DSC, BCSC, BCSC-NC).
+* `icaopkd-002-complete-<version>.ldif`, containing the eMRTD CSCA master lists.
+* `icaopkd-003-complete-<version>.ldif`, containing eHealth PKI objects (CRL, DSC).
+* `icaopkd-004-complete-<version>.ldif`, containing the eMRTD deviation lists.
+* `icaopkd-005-complete-<version>.ldif`, containing the eHealth CSCA master lists.
+
+Do not use the delta files. They only contain changes since the previous version.
+
+You should also download the [public ICAO master list](https://www.icao.int/icao-pkd/icao-master-list)
+as a `.ml` file. It can contain CSCA certificates that are not included in the LDIF files above.
+
+Update the file names in [`UpdateFiles.bat`](UpdateFiles.bat) to
+match the version and location you downloaded.
 
 You can then execute the [`UpdateFiles.bat` batch file](UpdateFiles.bat) in the root of this 
 repository, having built the corresponding utilities necessary. The batch file will update the 
-certificate folers, and the corresponding manifest file for the packege. The batch file 
-assumes the downloaded files reside in the parent folder of the solution folder.
+certificate folders, and the corresponding manifest file for the package.
 
 ### Installing package
 
