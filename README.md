@@ -1,10 +1,12 @@
 ICAO Public-Key-Infrastructure Certificates
 ==============================================
 
-[ICAO publishes](https://pkddownload1.icao.int/) a list of public certificates used by
-certificate authorities in issuing certificates for electronic travel documents. When
-validating such certificates, the application needs to access the published certificates from 
-ICAO, as the normal certificate validation mechanism will not work otherwise.
+[ICAO publishes LDEF files](https://pkddownload1.icao.int/) and a 
+[public ICAO master list](https://www.icao.int/icao-pkd/icao-master-list) that together
+contain public certificates used by certificate authorities in issuing certificates for 
+electronic travel documents. When validating such certificates, the application needs to 
+access the published certificates from ICAO, as the normal certificate validation mechanism 
+will not work otherwise.
 
 This repository contains a copy of the certificates published by ICAO, and a utility 
 application called [`ExtractCertificates`](ExtractCertificates) that can extract the 
