@@ -75,19 +75,27 @@ for validation of electronic travel documents that reference them using their AK
 
 ICAO regularly updates the list of public certificates, and new certificates may be added or 
 old certificates may be removed. To update the list of certificates, you first need to
-[downloadt hem from ICAO](https://pkddownload1.icao.int/). To get a complete list, you need
-to download the following two files:
+[download them from ICAO](https://pkddownload1.icao.int/). To get a complete list, you need
+to download all five files listed under *Download the latest LDIF (.ldif) file*:
 
-* `icaopkd-001-complete-009875.ldif`, containg eMRTD Certificates (DSC, BCSC, BCSC-NC) and CRL.
-* `icaopkd-002-complete-000340.ldif`, containing the CSCA MasterList.
+* `icaopkd-001-complete-<version>.ldif`, containing eMRTD PKI objects (CRL, DSC, BCSC, BCSC-NC).
+* `icaopkd-002-complete-<version>.ldif`, containing the eMRTD CSCA master lists.
+* `icaopkd-003-complete-<version>.ldif`, containing eHealth PKI objects (CRL, DSC).
+* `icaopkd-004-complete-<version>.ldif`, containing the eMRTD deviation lists.
+* `icaopkd-005-complete-<version>.ldif`, containing the eHealth CSCA master lists.
 
-You can also download the [public ICAO master list](https://www.icao.int/icao-pkd/icao-master-list)
-as a `.ml` file and include it as an additional `-i` input in `UpdateFiles.bat`.
+Do not use the delta files. They only contain changes since the previous version.
+
+You should also download the [public ICAO master list](https://www.icao.int/icao-pkd/icao-master-list)
+as a `.ml` file. It can contain CSCA certificates that are not included in the LDIF files above.
+
+Place all downloaded files in the parent folder of the solution folder. The version number is
+part of each file name, so update the file names in [`UpdateFiles.bat`](UpdateFiles.bat) to
+match the versions you downloaded.
 
 You can then execute the [`UpdateFiles.bat` batch file](UpdateFiles.bat) in the root of this 
 repository, having built the corresponding utilities necessary. The batch file will update the 
-certificate folers, and the corresponding manifest file for the packege. The batch file 
-assumes the downloaded files reside in the parent folder of the solution folder.
+certificate folders, and the corresponding manifest file for the package.
 
 ### Installing package
 
