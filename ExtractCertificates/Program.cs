@@ -254,10 +254,14 @@ internal class Program
 								State = 1;
 								Status.NrCertificates++;
 							}
-							else if (s.StartsWith("pkdMasterListContent::"))
+							else if (s.StartsWith("pkdMasterListContent;"))
 							{
+								s = s[21..];
+								if (!s.StartsWith("binary::"))
+									throw new Exception("Expected binary master list.");
+
 								sb.Clear();
-								sb.Append(s[22..].Trim());
+								sb.Append(s[8..].Trim());
 
 								State = 2;
 								Status.NrMasterLists++;
