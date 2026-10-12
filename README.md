@@ -39,22 +39,9 @@ You can process multiple input files by providing multiple -i arguments, but onl
 one output folder with -o.
 
 If `-d` is present, old files no longer present in the inputs will be deleted from the
-output folder. Only use this option when supplying the complete set of input sources.
+output folder.
 
 Use `-h` or `-?` to show the Command-Line help message.
-
-### Importing the public ICAO master list
-
-Download the [public ICAO master list](https://www.icao.int/icao-pkd/icao-master-list)
-and pass the downloaded `.ml` file directly to `-i`.
-For example, from the repository root:
-
-```powershell
-dotnet run --project ExtractCertificates --no-launch-profile -- -i "ICAO_ML_20260924155216.ml" -o "Root/IcaoPki"
-```
-
-Leave out `-d` when adding a single master list, so certificates from other sources are
-retained. Certificates are deduplicated by country/SKI using the existing import logic.
 
 The [IoTGateway](https://github.com/PeterWaher/IoTGateway) repository contains a utility
 application called [`GenManifest`](https://github.com/PeterWaher/IoTGateway/tree/master/Utilities/Waher.Utility.GenManifest)
