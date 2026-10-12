@@ -89,9 +89,8 @@ Do not use the delta files. They only contain changes since the previous version
 You should also download the [public ICAO master list](https://www.icao.int/icao-pkd/icao-master-list)
 as a `.ml` file. It can contain CSCA certificates that are not included in the LDIF files above.
 
-Place all downloaded files in the parent folder of the solution folder. The version number is
-part of each file name, so update the file names in [`UpdateFiles.bat`](UpdateFiles.bat) to
-match the versions you downloaded.
+Update the file names in [`UpdateFiles.bat`](UpdateFiles.bat) to
+match the version and location you downloaded.
 
 You can then execute the [`UpdateFiles.bat` batch file](UpdateFiles.bat) in the root of this 
 repository, having built the corresponding utilities necessary. The batch file will update the 
