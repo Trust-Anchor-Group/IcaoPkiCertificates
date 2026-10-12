@@ -209,7 +209,6 @@ internal class Program
 				if (Extension.Equals(".ml", StringComparison.OrdinalIgnoreCase) ||
 					Extension.Equals(".mls", StringComparison.OrdinalIgnoreCase))
 				{
-					Status.NrMasterLists++;
 					CheckMasterList(File.ReadAllBytes(InputFileName), Status, OutputFolder);
 					continue;
 				}
@@ -534,6 +533,8 @@ internal class Program
 					}
 				}
 			}
+
+			Status.NrMasterLists++;
 		}
 		catch (Exception ex)
 		{
